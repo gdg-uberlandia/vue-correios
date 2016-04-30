@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <!--hello></hello-->
-    <my-map></my-map>
+    <busca-encomenda :encomenda.sync='encomendaEncontrada'></busca-encomenda>
     <img :class="{'defaultClass': defaultClass}" src="./img/logo.png">
   </div>
 </template>
@@ -9,16 +8,18 @@
 <script>
 import Hello from './components/Hello.vue'
 import MyMap from './components/MyMap.vue'
+import BuscaEncomenda from './components/BuscaEncomenda.vue'
 
 export default {
   components: {
     Hello,
-    MyMap
+    MyMap,
+    BuscaEncomenda
   },
 
   data: function(){
   	return {
-  		defaultClass: true
+  		encomendaEncontrada: {}
   	}
   }
 }
